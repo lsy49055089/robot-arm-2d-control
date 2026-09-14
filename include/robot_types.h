@@ -2,12 +2,14 @@
 #define ROBOT_TYPES_H
 
 #include <stdint.h>
-
+// pixel data
 typedef struct {
     float x;
     float y;
     uint8_t valid;
 } Point2D;
+
+// pixel to robot data
 typedef struct {
     float x;
     float y;
@@ -15,6 +17,7 @@ typedef struct {
     uint8_t valid;
 } Robot3D;
 
+// CNN -> 이민
 typedef struct {
     Point2D finger1;
     Point2D finger2;
@@ -27,6 +30,7 @@ typedef struct {
     uint8_t valid;
 } HumanArm2D;
 
+// 이민 -> 지승배
 typedef struct {
     Robot3D finger1;
     Robot3D finger2;
@@ -37,6 +41,7 @@ typedef struct {
     uint8_t valid;
 } Target2D;
 
+// 지승배 -> 이승열
 typedef struct {
     float base_deg;
 
