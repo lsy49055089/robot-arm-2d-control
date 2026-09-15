@@ -28,9 +28,9 @@ Fixed joints in 2D mode:
 
 ## Software Pipeline
 
-HumanArm2D
+HumanPose2D
 → Human Target Angle
-→ TargetPose3D
+→ HumanJointTarget
 → Robot Calibration
 → JointCommand
 → Output Controller
