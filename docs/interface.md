@@ -28,12 +28,12 @@ Fixed joints in 2D mode:
 
 ## Software Pipeline
 
-HumanArm2D
-→ Pose Mapping
-→ Target2D
-→ 2D Kinematics
+HumanPose2D
+→ Human Target Angle
+→ HumanJointTarget
+→ Robot Calibration
 → JointCommand
-→ Servo Control
+→ Output Controller
 → Robot Arm
 
 ## Gripper
