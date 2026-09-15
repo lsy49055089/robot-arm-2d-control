@@ -1,0 +1,6 @@
+#ifndef OUTPUT_CONTROLLER_SERVO_CONTROL_H
+#define OUTPUT_CONTROLLER_SERVO_CONTROL_H
+
+#include "common/robot_types.h"
+
+#endif /* OUTPUT_CONTROLLER_SERVO_CONTROL_H */

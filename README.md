@@ -8,9 +8,9 @@ C-based 2D human-motion tracking and 6-axis servo robot arm control project.
 robot-arm-2d-control/
 ├── include/
 │   ├── common/    # Shared data contracts
-│   ├── pose/      # Camera pose mapping
-│   ├── motion/    # Kinematics and motion control
-│   └── servo/     # Servo output, modes, and recording
+│   ├── human_target_angle/ # Human pose to target angles
+│   ├── robot_calibration/  # Kinematics and robot calibration
+│   └── output_controller/  # Servo output, modes, and recording
 ├── src/            # Implementations grouped by module
 ├── tests/          # Tests grouped by module
 ├── config/         # Robot-wide hardware configuration
@@ -22,7 +22,7 @@ Module headers are included with their module path, for example:
 
 ```c
 #include "common/robot_types.h"
-#include "motion/kinematics_2d.h"
+#include "robot_calibration/kinematics_2d.h"
 ```
 
 ## Build and test

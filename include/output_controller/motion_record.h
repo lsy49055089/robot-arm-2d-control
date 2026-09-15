@@ -1,0 +1,6 @@
+#ifndef OUTPUT_CONTROLLER_MOTION_RECORD_H
+#define OUTPUT_CONTROLLER_MOTION_RECORD_H
+
+#include "common/robot_types.h"
+
+#endif /* OUTPUT_CONTROLLER_MOTION_RECORD_H */

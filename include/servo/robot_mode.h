@@ -1,4 +1,0 @@
-#ifndef SERVO_ROBOT_MODE_H
-#define SERVO_ROBOT_MODE_H
-
-#endif /* SERVO_ROBOT_MODE_H */
