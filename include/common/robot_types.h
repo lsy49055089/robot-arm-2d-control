@@ -10,15 +10,15 @@ typedef struct {
     uint8_t valid;
 } Point2D;
 
-/* A point expressed in the robot coordinate system. */
+/* A point expressed in three-dimensional coordinates. */
 typedef struct {
     float x;
     float y;
     float z;
     uint8_t valid;
-} Robot3D;
+} Point3D;
 
-/* Pose detector output consumed by the pose mapping module. */
+/* Pose detector output consumed by the human target angle module. */
 typedef struct {
     Point2D finger1;
     Point2D finger2;
@@ -29,20 +29,23 @@ typedef struct {
 
     uint32_t frame_id;
     uint8_t valid;
-} HumanArm2D;
+} HumanPose2D;
 
-/* Robot-space target produced by pose mapping for the motion module. */
+/* Human joint-space target: human_target_angle -> robot_calibration. */
 typedef struct {
-    Robot3D finger1;
-    Robot3D finger2;
-    Robot3D wrist;
-    Robot3D elbow;
-    Robot3D shoulder;
+    float base_deg;
+
+    float shoulder_deg;
+    float elbow_deg;
+    float wrist_pitch_deg;
+    float wrist_roll_deg;
+
+    float gripper_norm;
 
     uint8_t valid;
-} TargetPose3D;
+} HumanJointTarget;
 
-/* Joint target produced by motion control for the servo module. */
+/* Calibrated robot command: robot_calibration -> output_controller. */
 typedef struct {
     float base_deg;
 
