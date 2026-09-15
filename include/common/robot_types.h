@@ -1,15 +1,16 @@
-#ifndef ROBOT_TYPES_H
-#define ROBOT_TYPES_H
+#ifndef COMMON_ROBOT_TYPES_H
+#define COMMON_ROBOT_TYPES_H
 
 #include <stdint.h>
-// pixel data
+
+/* A point measured in camera pixel coordinates. */
 typedef struct {
     float x;
     float y;
     uint8_t valid;
 } Point2D;
 
-// pixel to robot data
+/* A point expressed in the robot coordinate system. */
 typedef struct {
     float x;
     float y;
@@ -17,7 +18,7 @@ typedef struct {
     uint8_t valid;
 } Robot3D;
 
-// CNN -> 이민
+/* Pose detector output consumed by the pose mapping module. */
 typedef struct {
     Point2D finger1;
     Point2D finger2;
@@ -30,7 +31,7 @@ typedef struct {
     uint8_t valid;
 } HumanArm2D;
 
-// 이민 -> 지승배
+/* Robot-space target produced by pose mapping for the motion module. */
 typedef struct {
     Robot3D finger1;
     Robot3D finger2;
@@ -39,9 +40,9 @@ typedef struct {
     Robot3D shoulder;
 
     uint8_t valid;
-} Target2D;
+} TargetPose3D;
 
-// 지승배 -> 이승열
+/* Joint target produced by motion control for the servo module. */
 typedef struct {
     float base_deg;
 
@@ -55,4 +56,4 @@ typedef struct {
     uint8_t valid;
 } JointCommand;
 
-#endif
+#endif /* COMMON_ROBOT_TYPES_H */

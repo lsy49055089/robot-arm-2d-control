@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "robot_types.h"
+
+#include "common/robot_types.h"
 
 int main(void)
 {
