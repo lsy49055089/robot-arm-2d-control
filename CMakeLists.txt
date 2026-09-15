@@ -26,7 +26,8 @@ add_library(human_target_angle STATIC
 configure_robot_target(human_target_angle)
 
 add_library(robot_calibration STATIC
-    src/robot_calibration/kinematics_2d.c
+    src/robot_calibration/robot_calibration.c
+    src/robot_calibration/robot_calibration_config.c
     src/robot_calibration/motion_control.c
 )
 configure_robot_target(robot_calibration)
@@ -58,10 +59,10 @@ if(BUILD_TESTING)
     target_link_libraries(test_pose_mapping PRIVATE human_target_angle)
     add_test(NAME pose_mapping COMMAND test_pose_mapping)
 
-    add_executable(test_kinematics_2d tests/robot_calibration/test_kinematics_2d.c)
-    configure_robot_target(test_kinematics_2d)
-    target_link_libraries(test_kinematics_2d PRIVATE robot_calibration)
-    add_test(NAME kinematics_2d COMMAND test_kinematics_2d)
+    add_executable(test_robot_calibration tests/robot_calibration/test_robot_calibration.c)
+    configure_robot_target(test_robot_calibration)
+    target_link_libraries(test_robot_calibration PRIVATE robot_calibration)
+    add_test(NAME robot_calibration COMMAND test_robot_calibration)
 
     add_executable(test_servo_control tests/output_controller/test_servo_control.c)
     configure_robot_target(test_servo_control)

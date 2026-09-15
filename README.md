@@ -22,7 +22,7 @@ Module headers are included with their module path, for example:
 
 ```c
 #include "common/robot_types.h"
-#include "robot_calibration/kinematics_2d.h"
+#include "robot_calibration/robot_calibration.h"
 ```
 
 ## Build and test
