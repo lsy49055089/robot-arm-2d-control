@@ -30,7 +30,7 @@ Fixed joints in 2D mode:
 
 HumanArm2D
 → Pose Mapping
-→ Target2D
+→ TargetPose3D
 → 2D Kinematics
 → JointCommand
 → Servo Control
