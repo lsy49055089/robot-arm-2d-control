@@ -32,6 +32,7 @@ add_library(robot_calibration STATIC
 configure_robot_target(robot_calibration)
 
 add_library(output_controller STATIC
+    src/output_controller/output_control.c
     src/output_controller/servo_control.c
     src/output_controller/servo_config.c
     src/output_controller/motion_record.c
@@ -72,4 +73,9 @@ if(BUILD_TESTING)
     configure_robot_target(test_record)
     target_link_libraries(test_record PRIVATE output_controller)
     add_test(NAME motion_record COMMAND test_record)
+
+    add_executable(test_output_control tests/output_controller/test_output_control.c)
+    configure_robot_target(test_output_control)
+    target_link_libraries(test_output_control PRIVATE output_controller)
+    add_test(NAME output_control COMMAND test_output_control)
 endif()
